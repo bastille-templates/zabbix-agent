@@ -4,8 +4,8 @@ RESTART
 
 PKG zabbix7-agent
 
-CMD sed -i '' 's%Server=127.0.0.1%Server=%{JAIL_IP}%g' /usr/local/etc/zabbix7/zabbix_agentd.conf
-CMD sed -i '' 's%ServerActive=127.0.0.1%ServerActive=%{JAIL_IP}%g' /usr/local/etc/zabbix7/zabbix_agentd.conf
+CMD sed -i '' 's%Server=127.0.0.1%Server=${JAIL_IP}%g' /usr/local/etc/zabbix7/zabbix_agentd.conf
+CMD sed -i '' 's%ServerActive=127.0.0.1%ServerActive=${JAIL_IP}%g' /usr/local/etc/zabbix7/zabbix_agentd.conf
 CMD sed -i '' 's%Hostname=Zabbix server%Hostname=Zabbix_Agent%g' /usr/local/etc/zabbix7/zabbix_agentd.conf
 
 SERVICE zabbix_agentd enable
