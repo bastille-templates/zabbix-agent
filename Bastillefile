@@ -1,0 +1,10 @@
+#CONFIG set allow.sysvipc=1;
+
+#RESTART
+
+PKG zabbix7-agent
+
+CMD sed -i '' 's%Hostname=Zabbix server%Hostname=Zabbix_Server%g' /usr/local/etc/zabbix7/zabbix_agentd.conf
+
+SERVICE zabbix_agentd enable
+SERVICE zabbix_agentd start
