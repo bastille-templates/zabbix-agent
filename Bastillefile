@@ -1,5 +1,5 @@
-CONFIG set allow.sysvipc=1
-CONFIG set allow.raw_sockets =1;
+CONFIG set allow.sysvipc=1;
+CONFIG set allow.raw_sockets=1;
 
 RESTART
 
@@ -12,4 +12,4 @@ CMD sed -i '' 's%Hostname=Zabbix server%Hostname=Zabbix_Agent%g' /usr/local/etc/
 SERVICE zabbix_agentd enable
 SERVICE zabbix_agentd start
 
-RDR tcp 10050
+RDR tcp 10050 10050
